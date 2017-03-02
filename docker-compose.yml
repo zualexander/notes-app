@@ -1,0 +1,17 @@
+---
+version: '2'
+
+services:
+  web:
+    container_name: 'notes-frontend'
+    image: 'bitnami/nginx:latest'
+    volumes:
+      - ./logs/access.log:/opt/bitnami/nginx/logs/myapp-access.log
+      - ./logs/error.log:/opt/bitnami/nginx/logs/myapp-error.log
+      - ./notes-app/dist:/app
+    ports:
+      - "8080:80"
+
+  db:
+    container_name: 'notes-db'
+    image: postgres
