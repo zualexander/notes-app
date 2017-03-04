@@ -3,15 +3,21 @@ version: '2'
 
 services:
   web:
-    container_name: 'notes-frontend'
+    container_name: 'notes_frontend'
     image: 'bitnami/nginx:latest'
     volumes:
       - ./logs/access.log:/opt/bitnami/nginx/logs/myapp-access.log
       - ./logs/error.log:/opt/bitnami/nginx/logs/myapp-error.log
       - ./notes-app/dist:/app
     ports:
-      - "8080:80"
+      - '8080:80'
 
   db:
-    container_name: 'notes-db'
+    container_name: 'notes_db'
     image: postgres
+    environment:
+              - POSTGRES_USER=user
+              - POSTGRES_PASSWORD=password
+              - POSTGRES_DB=notes
+    ports:
+      - '5432:5432'
