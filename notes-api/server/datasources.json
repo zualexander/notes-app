@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "notes": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "postgres://user:password@localhost/notes",
+    "database": "notes",
+    "password": "password",
+    "name": "notes",
+    "user": "user",
+    "connector": "postgresql"
+  }
+}
