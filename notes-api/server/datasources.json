@@ -4,9 +4,9 @@
     "connector": "memory"
   },
   "notes": {
-    "host": "localhost",
+    "host": "db",
     "port": 5432,
-    "url": "postgres://user:password@localhost/notes",
+    "url": "postgres://user:password@db/notes",
     "database": "notes",
     "password": "password",
     "name": "notes",
