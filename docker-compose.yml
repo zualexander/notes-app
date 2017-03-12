@@ -1,5 +1,4 @@
----
-version: '2'
+version: '3'
 
 services:
   web:
@@ -11,6 +10,16 @@ services:
       - ./notes-app/dist:/app
     ports:
       - '8080:80'
+
+  api:
+    container_name: 'notes_api'
+    image: 'node:onbuild'
+    depends_on:
+      - db
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./notes-api:/usr/src/app
 
   db:
     container_name: 'notes_db'
