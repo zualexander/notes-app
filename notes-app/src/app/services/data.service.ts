@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {IGitHubUserData} from './../models';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs';
-import { environment } from './../../environments/environment';
+import 'rxjs/add/operator/map';
+import {environment} from './../../environments/environment';
 
 export interface IDataService {
   loadGithubUserData(username: string): Observable<IGitHubUserData>;
@@ -11,7 +12,6 @@ export interface IDataService {
 @Injectable()
 export class DataService {
   private http: Http;
-
   constructor(Http: Http) {
     this.http = Http;
   }
@@ -20,5 +20,6 @@ export class DataService {
     return this.http.get(`https://api.github.com/users/${username}`)
       .map((response: Response) => response.json());
   }
+
 
 }

@@ -12,7 +12,7 @@ export class AppComponent {
   public data: IGitHubUserData;
   private dataService: IDataService;
 
-  constructor(DataService) {
+  constructor(DataService: DataService) {
     this.dataService = DataService;
     this.dataService.loadGithubUserData('zualexander')
       .subscribe((data: IGitHubUserData) => {
