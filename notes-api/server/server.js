@@ -2,6 +2,7 @@
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
+var autoupdate = require('./boot/autoupdate');
 
 var app = module.exports = loopback();
 
@@ -27,3 +28,6 @@ boot(app, __dirname, function(err) {
   if (require.main === module)
     app.start();
 });
+
+
+
