@@ -9,4 +9,4 @@ npm i`
 ## run development
 * `make run-dev`
 * `cd notes-app`
-* `ng build -w`
+* `ng start`
