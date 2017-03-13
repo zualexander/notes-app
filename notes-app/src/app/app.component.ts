@@ -14,8 +14,13 @@ export class AppComponent {
 
   constructor(DataService: DataService) {
     this.dataService = DataService;
-    this.dataService.loadGithubUserData('zualexander')
-      .subscribe((data: IGitHubUserData) => {
+    // this.dataService.loadGithubUserData('zualexander')
+    //   .subscribe((data: IGitHubUserData) => {
+    //     this.data = data;
+    //   });
+
+    this.dataService.loadNotes()
+      .subscribe((data: any) => {
         this.data = data;
       });
   }
